@@ -128,7 +128,7 @@
         <div class="container text-center">
             <h2 class="display-4 fw-bold">American College of Technology affiliated with Maharishi International University.</h2>
             <h3 class="text-white mb-4" style="min-height: 1.5em;">
-                Place for <span class="typing-text"></span><span class="cursor">|</span>
+                Place for <span id="typing-text"></span><span class="cursor">|</span>
               </h3>
               <p class="lead text-white text-center pe-5 mt-4">A Unique Program for Students Worldwide<br> Proven Personal and Professional Development.</p>
 
@@ -140,60 +140,93 @@
     </section>
 
     <style>
-        /* Typing animation */
-        .typing-text {
-          display: inline-block;
-          position: relative;
-        }
-        .typing-text::after {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(to right, 
-            transparent 0%, 
-            transparent 50%, 
-            rgba(0,0,0,0) 50%, 
-            rgba(0,0,0,0) 100%);
-          background-size: 200% 100%;
-          animation: typing-erasing 12s steps(1) infinite;
-        }
         .cursor {
-          animation: blink 1s step-end infinite;
+            display: inline-block;
+            width: 8px;
+            height: 20px;
+            background-color: white;
+            margin-left: 5px;
+            animation: blink 1s infinite;
         }
-        
-        @keyframes typing-erasing {
-          0%, 16.5% { 
-            background-position: 100% 0;
-            content: "Dreamers,";
-          }
-          16.6%, 33% { 
-            background-position: 0 0;
-            content: "Dreamers,";
-          }
-          33.1%, 49.5% { 
-            background-position: 100% 0;
-            content: "Thinkers,";
-          }
-          49.6%, 66% { 
-            background-position: 0 0;
-            content: "Thinkers,";
-          }
-          66.1%, 82.5% { 
-            background-position: 100% 0;
-            content: "Doers.";
-          }
-          82.6%, 100% { 
-            background-position: 0 0;
-            content: "Doers.";
-          }
-        }
-        
+    
         @keyframes blink {
-          from, to { opacity: 0; }
-          50% { opacity: 1; }
+            50% { opacity: 0; }
         }
-        </style>
+    </style>
+    
+    <script>
+        const words = ["Dreamers,", "Thinkers,", "Doers."];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100;
+        const erasingSpeed = 50;
+        const delayBetweenWords = 1000;
+        
+        const textElement = document.getElementById("typing-text");
+    
+        function typeEffect() {
+            // When starting fresh (after full deletion)
+            if (textElement.textContent === "Place for " && wordIndex === 0 && charIndex === 0) {
+                // Immediate transition to typing first word
+                setTimeout(() => {
+                    typeWord();
+                }, 300); // Brief pause before restarting
+                return;
+            }
+    
+            if (!isDeleting) {
+                typeWord();
+            } else {
+                deleteWord();
+            }
+        }
+    
+        function typeWord() {
+            const currentWord = words[wordIndex];
+            const prefix = wordIndex > 0 ? words.slice(0, wordIndex).join(" ") + " " : "";
+            const currentText = prefix + currentWord.substring(0, charIndex + 1);
+            
+            textElement.textContent = currentText;
+            charIndex++;
+    
+            if (charIndex === currentWord.length) {
+                // Finished typing current word
+                if (wordIndex < words.length - 1) {
+                    // Move to next word
+                    wordIndex++;
+                    charIndex = 0;
+                    setTimeout(typeEffect, delayBetweenWords);
+                } else {
+                    // All words typed, start deleting
+                    isDeleting = true;
+                    setTimeout(typeEffect, delayBetweenWords);
+                }
+            } else {
+                setTimeout(typeEffect, typingSpeed);
+            }
+        }
+    
+        function deleteWord() {
+            let currentText = textElement.textContent;
+            
+            if (currentText.length > "Place for ".length) {
+                // Delete one character
+                textElement.textContent = currentText.substring(0, currentText.length - 1);
+                setTimeout(typeEffect, erasingSpeed);
+            } else {
+                // Fully deleted, reset and restart
+                isDeleting = false;
+                wordIndex = 0;
+                charIndex = 0;
+                // Immediate restart without delay
+                typeEffect();
+            }
+        }
+    
+        // Initial start
+        setTimeout(typeEffect, 1000);
+    </script>
     
 <section class="py-5">
     <div class="container">
