@@ -20,25 +20,61 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .flip-card {
-            perspective: 1000px;
-            height: 300px;
-        }
-        .flip-card-inner {
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-        .flip-card:hover .flip-card-inner {
-            transform: rotateY(180deg);
-        }
-        .flip-card-front, .flip-card-back {
-            backface-visibility: hidden;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-        .flip-card-back {
-            transform: rotateY(180deg);
-        }
+        perspective: 1000px;
+        height: 300px;
+        margin: 20px auto;
+    }
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px;
+    }
+    .flip-card-front {
+        background: linear-gradient(135deg, #2c3e50, #3498db);
+        color: white;
+    }
+    .flip-card-back {
+        background: linear-gradient(135deg, #00b09b, #96c93d);
+        color: white;
+        transform: rotateY(180deg);
+    }
+    .flip-card h3 {
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    .flip-card p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    .flip-btn {
+        margin-top: 25px;
+        padding: 10px 25px;
+        font-weight: 600;
+        border: 2px solid white;
+        background: transparent;
+        transition: all 0.3s;
+    }
+    .flip-btn:hover {
+        background: white;
+        color: #333;
+    }
     </style>
 
 </head>
@@ -228,46 +264,47 @@
         setTimeout(typeEffect, 1000);
     </script>
     
-<section class="py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-7">
-                <h2>AN EXCITING OPPORTUNITY FOR MSC IN COMPUTER SCIENCE AND MBA PROGRAM APPLICANTS</h2>
-                <p class="lead">
-                    American College of Technology (ACT) is a higher learning institution established with a mission 
-                    of producing internationally competent professionals in the field of Management, Business Administration 
-                    and Computer Science programs at graduate level ACT is fully accredited by the Ethiopian Higher Education Agency. The College aspires to be one of the leading higher learning institutions in the region. ACT engages highly qualified and experienced academic staff members from the US and local to make you highly competent in the industry. ACT has already started registration for 2020/21 during normal working hours. Our programs are unique, flexible and affordable. Don't miss it!!! If you are interested to get registered, please call or email or visit us..
-                </p>
-            </div>
-            <div class="col-md-5">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <!-- Front Card -->
-                        <div class="flip-card-front card bg-primary text-white p-4 rounded-3 d-flex flex-column justify-content-center">
-                            <h3 class="text-center">Develop Your Inner</h3>
-                            <p class="text-center">
-                                As a student, you'll have the opportunity to learn<br>
-                                softskill technique to improve your learning<br>
-                                ability and job performance
-                            </p>
-                        </div>
-                        <!-- Back Card -->
-                        <div class="flip-card-back card bg-info text-white p-4 rounded-3 d-flex flex-column justify-content-center">
-                            <h3 class="text-center">Accredited, Respected<br>and Recognized</h3>
-                            <p class="text-center">
-                                American College of Technology is Accredited by<br>
-                                Education and Training Authority (ETA)
-                            </p>
-                            <div class="text-center mt-3">
-                                <button class="btn btn-light">START YOUR APPLICATION NOW</button>
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <h2 class="mb-4">AN EXCITING OPPORTUNITY FOR MSC IN COMPUTER SCIENCE AND MBA PROGRAM APPLICANTS</h2>
+                    <p class="lead">
+                        American College of Technology (ACT) is a higher learning institution established with a mission 
+                        of producing internationally competent professionals in the field of Management, Business Administration 
+                        and Computer Science programs at graduate level. ACT is fully accredited by the Ethiopian Higher Education Agency. 
+                        The College aspires to be one of the leading higher learning institutions in the region  ACT engages highly qualified and experienced academic staff members from the US and local to make you highly competent in the industry. ACT has already started registration for 2020/21 during normal working hours. Our programs are unique, flexible and affordable. Don't miss it!!! If you are interested to get registered, please call or email or visit us.
+                    </p>
+                </div>
+                <div class="col-lg-5">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <!-- Front Card -->
+                            <div class="flip-card-front">
+                                <h3 class="text-center">Develop Your Inner Genius</h3>
+                                <p class="text-center">
+                                    As a student, you'll have the opportunity to learn<br>
+                                    soft skill techniques to improve your learning<br>
+                                    ability and job performance
+                                </p>
+                            </div>
+                            <!-- Back Card -->
+                            <div class="flip-card-back">
+                                <h3 class="text-center">Accredited, Respected<br>and Recognized</h3>
+                                <p class="text-center">
+                                    American College of Technology is Accredited by<br>
+                                    Education and Training Authority (ETA)
+                                </p>
+                                <div class="text-center">
+                                    <button class="flip-btn">START YOUR APPLICATION NOW</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 <section class="py-5 bg-light">
