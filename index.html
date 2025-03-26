@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>American College of Technology</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://act.edu.et/assets/img/bg4.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+        }
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .flip-card {
+        perspective: 1000px;
+        height: 300px;
+        margin: 20px auto;
+    }
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px;
+    }
+    .flip-card-front {
+        background: linear-gradient(135deg, #2c3e50, #3498db);
+        color: white;
+    }
+    .flip-card-back {
+        background: linear-gradient(135deg, #00b09b, #96c93d);
+        color: white;
+        transform: rotateY(180deg);
+    }
+    .flip-card h3 {
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    .flip-card p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    .flip-btn {
+        margin-top: 25px;
+        padding: 10px 25px;
+        font-weight: 600;
+        border: 2px solid white;
+        background: transparent;
+        transition: all 0.3s;
+    }
+    .flip-btn:hover {
+        background: white;
+        color: #333;
+    }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://act.edu.et/assets/img/act1.png" alt="College Logo" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="academicsDropdown" role="button" data-bs-toggle="dropdown">
+                            Academic Programs
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><h6 class="dropdown-header">Undergraduate programs</h6></li>
+                            <li><a class="dropdown-item" href="#">Accounting & Finance</a></li>
+                            <li><a class="dropdown-item" href="#">Business adminstration</a></li>
+                            <li><a class="dropdown-item" href="#">Computer Science</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><h6 class="dropdown-header">Graduate programs</h6></li>
+                            <li><a class="dropdown-item" href="#">MBA</a></li>
+                            <li><a class="dropdown-item" href="#">MSC Computer Science</a></li>
+                            <li><hr class="dropdown-divider"></li>
+
+                            <li><h6 class="dropdown-header">Miu masters program</h6></li>
+                            <li><a class="dropdown-item" href="#">Business adminstrarion</a></li>
+
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="onlineDropdown" role="button" data-bs-toggle="dropdown">
+                            Online Programs
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Business Administration</a></li>
+                            <li><a class="dropdown-item" href="#">Leadership</a></li>
+                            <li><a class="dropdown-item" href="#">Project Management</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown">
+                            News & Events
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">News</a></li>
+                            <li><a class="dropdown-item" href="#">Events</a></li>
+                            <li><a class="dropdown-item" href="#">Publications</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">MYACT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">training and consultancy</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="applyDropdown" data-bs-toggle="dropdown">
+                            Apply Now
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Online Program</a></li>
+                            <li><a class="dropdown-item" href="#">Regular Program</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="applyDropdown" data-bs-toggle="dropdown">
+                            pay using telebirr
+                        </button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="hero-section">
+        <div class="container text-center">
+            <h2 class="display-4 fw-bold">American College of Technology affiliated with Maharishi International University.</h2>
+            <h3 class="text-white mb-4" style="min-height: 1.5em;">
+                Place for <span id="typing-text"></span><span class="cursor">|</span>
+              </h3>
+              <p class="lead text-white text-center pe-5 mt-4">A Unique Program for Students Worldwide<br> Proven Personal and Professional Development.</p>
+
+            <div class="mt-4">
+                <a href="#" class="btn btn-light btn-lg mx-2">Apply for Online Program</a>
+                <a href="#" class="btn btn-outline-light btn-lg mx-2">Apply for Regular Program</a>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 20px;
+            background-color: white;
+            margin-left: 5px;
+            animation: blink 1s infinite;
+        }
+    
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+    
+    <script>
+        const words = ["Dreamers,", "Thinkers,", "Doers."];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100;
+        const erasingSpeed = 50;
+        const delayBetweenWords = 1000;
+        
+        const textElement = document.getElementById("typing-text");
+    
+        function typeEffect() {
+            // When starting fresh (after full deletion)
+            if (textElement.textContent === "Place for " && wordIndex === 0 && charIndex === 0) {
+                // Immediate transition to typing first word
+                setTimeout(() => {
+                    typeWord();
+                }, 300); // Brief pause before restarting
+                return;
+            }
+    
+            if (!isDeleting) {
+                typeWord();
+            } else {
+                deleteWord();
+            }
+        }
+    
+        function typeWord() {
+            const currentWord = words[wordIndex];
+            const prefix = wordIndex > 0 ? words.slice(0, wordIndex).join(" ") + " " : "";
+            const currentText = prefix + currentWord.substring(0, charIndex + 1);
+            
+            textElement.textContent = currentText;
+            charIndex++;
+    
+            if (charIndex === currentWord.length) {
+                // Finished typing current word
+                if (wordIndex < words.length - 1) {
+                    // Move to next word
+                    wordIndex++;
+                    charIndex = 0;
+                    setTimeout(typeEffect, delayBetweenWords);
+                } else {
+                    // All words typed, start deleting
+                    isDeleting = true;
+                    setTimeout(typeEffect, delayBetweenWords);
+                }
+            } else {
+                setTimeout(typeEffect, typingSpeed);
+            }
+        }
+    
+        function deleteWord() {
+            let currentText = textElement.textContent;
+            
+            if (currentText.length > "Place for ".length) {
+                // Delete one character
+                textElement.textContent = currentText.substring(0, currentText.length - 1);
+                setTimeout(typeEffect, erasingSpeed);
+            } else {
+                // Fully deleted, reset and restart
+                isDeleting = false;
+                wordIndex = 0;
+                charIndex = 0;
+                // Immediate restart without delay
+                typeEffect();
+            }
+        }
+    
+        // Initial start
+        setTimeout(typeEffect, 1000);
+    </script>
+    
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <h2 class="mb-4">AN EXCITING OPPORTUNITY FOR MSC IN COMPUTER SCIENCE AND MBA PROGRAM APPLICANTS</h2>
+                    <p class="lead">
+                        American College of Technology (ACT) is a higher learning institution established with a mission 
+                        of producing internationally competent professionals in the field of Management, Business Administration 
+                        and Computer Science programs at graduate level. ACT is fully accredited by the Ethiopian Higher Education Agency. 
+                        The College aspires to be one of the leading higher learning institutions in the region  ACT engages highly qualified and experienced academic staff members from the US and local to make you highly competent in the industry. ACT has already started registration for 2020/21 during normal working hours. Our programs are unique, flexible and affordable. Don't miss it!!! If you are interested to get registered, please call or email or visit us.
+                    </p>
+                </div>
+                <div class="col-lg-5">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <!-- Front Card -->
+                            <div class="flip-card-front">
+                                <h3 class="text-center">Develop Your Inner Genius</h3>
+                                <p class="text-center">
+                                    As a student, you'll have the opportunity to learn<br>
+                                    soft skill techniques to improve your learning<br>
+                                    ability and job performance
+                                </p>
+                            </div>
+                            <!-- Back Card -->
+                            <div class="flip-card-back">
+                                <h3 class="text-center">Accredited, Respected<br>and Recognized</h3>
+                                <p class="text-center">
+                                    American College of Technology is Accredited by<br>
+                                    Education and Training Authority (ETA)
+                                </p>
+                                <div class="text-center">
+                                    <button class="flip-btn">START YOUR APPLICATION NOW</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="mb-4"><a href="#" class="text-decoration-none">Recent News</a></h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://act.edu.et/storage/news/September2024/hfosBZYfumN6jYoie0ny.png" class="card-img-top" alt="News Image">
+                    <div class="card-body">
+                        <h5 class="card-title">ACT's Health Care Courses Achieve Official Accreditation</h5>
+                        <p class="card-text">We are proud to announce that our health care courses have received official accreditation...</p>
+                        <a href="#" class="btn btn-sm btn-primary">Read More</a>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <small class="text-muted">Posted 2024-09-06</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://act.edu.et/storage/news/August2024/a1wXZO6H40hNJx9p9h7B.jpg" class="card-img-top" alt="News Image">
+                    <div class="card-body">
+                        <h5 class="card-title">ACT Academy - Virtual Panel Discussion</h5>
+                        <p class="card-text">Register at: https://lnkd.in/esMbX4gR Topic: ACT Academy Demo Time: August 6, 2024...</p>
+                        <a href="#" class="btn btn-sm btn-primary">Read More</a>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <small class="text-muted">Posted 2024-08-06</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h4 class="card-title">Upcoming Events</h4>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-calendar-alt me-2 text-primary"></i>
+                            <a href="#" class="text-decoration-none">4th Annual Research Conference (13 July 2024)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5" id="our-clients">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
+          <h3 class="mb-4">Our Clients</h3>
+          <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-4 col-lg-3">
+              <img src="https://act.edu.et/assets/img/boa.jpeg" class="img-fluid" 
+                   data-bs-toggle="tooltip" data-bs-placement="bottom" 
+                   title="Bank of Abyssinia" alt="Bank of Abyssinia">
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <img src="https://act.edu.et/assets/img/cbe.jpeg" class="img-fluid"
+                   data-bs-toggle="tooltip" data-bs-placement="bottom"
+                   title="Commercial Bank of Ethiopia" alt="CBE">
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <img src="https://act.edu.et/assets/img/ea.png" class="img-fluid"
+                   data-bs-toggle="tooltip" data-bs-placement="bottom"
+                   title="Ethiopian Airlines" alt="Ethiopian Airlines">
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <img src="https://act.edu.et/assets/img/giz.jpeg" class="img-fluid"
+                   data-bs-toggle="tooltip" data-bs-placement="bottom"
+                   title="GIZ" alt="GIZ">
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <img src="https://act.edu.et/assets/img/nb.jpeg" class="img-fluid"
+                   data-bs-toggle="tooltip" data-bs-placement="bottom"
+                   title="NIB International Bank" alt="NIB Bank">
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <img src="https://act.edu.et/assets/img/hof.png" class="img-fluid"
+                   data-bs-toggle="tooltip" data-bs-placement="bottom"
+                   title="House of Peoples's Representatives of FDRE" alt="HPR">
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <img src="https://act.edu.et/assets/img/zb.png" class="img-fluid"
+                   data-bs-toggle="tooltip" data-bs-placement="bottom"
+                   title="Zemen Bank" alt="Zemen Bank">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Linkage and Collaboration</h2>
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6">
+                <img src="https://act.edu.et/assets/img/miu.png" alt="MIU" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <h3>Maharishi International University (MIU)</h3>
+                <p>
+                    ACT collaborates with MIU to offer postgraduate programs in MBA and MSC in Computer Science. 
+                    MIU is a private University with its main campus located in Fairfield, Iowa, USA The University is accredited through the PhD level by the Higher Learning Commission of the North Central Association of Colleges and Schools (www.ncacihe.org).
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center mb-5 flex-row-reverse">
+            <div class="col-md-6">
+                <img src="https://act.edu.et/assets/img/hu.webp" alt="Huawei" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <h3>Huawei ICT Academy</h3>
+                <p>
+                    Huawei ICT Academy has been designed to deliver industry-standard training and certification courses 
+                    that are highly regarded by employers As such, access to these courses will equip students with the latest ICT knowledge and practical skills, making them more employable and helping to kick start their careers.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6">
+                <img src="https://act.edu.et/assets/img/ora.jpeg" alt="Oracle" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <h3>Oracle Academy</h3>
+                <p>
+                    Oracle Academy is designed to provide students with foundational knowledge and skills in areas of computer science that are universally in high demand across computing jobs. ACT is an Approved member of Oracle Academy where ACT students can enjoy free courses. Get direct access to a wide variety of benefits. The rigorous process of becoming Oracle certified makes you a better technologist.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center mb-5 flex-row-reverse">
+            <div class="col-md-6">
+                <img src="https://act.edu.et/assets/img/coursera.webp" alt="Coursera" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <h3>Coursera</h3>
+                <p>
+                    Coursera Inc. is an American massive open online course provider founded in 2012 by Stanford University computer science professors Andrew Ng and Daphne Koller. Coursera works with universities and other organizations to offer online courses, certifications, and degrees in a variety of subjects.
+                </p>
+            </div>
+        </div>
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6">
+                <img src="https://act.edu.et/assets/img/cisco.jpeg" alt="ciscco" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <h3>Cisco Academy</h3>
+                <p>
+                    Cisco Networking Academy transforms the lives of learners, educators and communities through the power of technology, education and career opportunities. A good fit for you if you enjoy a mix of detailed planning, implementation and business-related matters. Network Administrator, Network Designer, Network Engineer. Projected job growth.
+                </p>
+            </div>
+    </div>
+</section>
+
+<footer class="bg-dark text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <h5>American College of Technology</h5>
+                <p>ACT Building, Arada Sub-city, Addis Ababa, Ethiopia</p>
+                <p>Phone: +251 955 04 04 04</p>
+                <p>Email: info@act.edu.et</p>
+                <p>FOLLOW US </p>
+            </div>
+            <div class="col-md-2 col-6 mb-4">
+                <h5>About Us</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white text-decoration-none">Vision</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Mission</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Values</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">What is unique with ACT</a></li>
+
+                </ul>
+            </div>
+            <div class="col-md-2 col-6 mb-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white text-decoration-none">News</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Events</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-6 mb-4">
+                <h5>Help & Support</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">FAQ</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Registrar forms</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Deposit Reciept</a></li>
+
+
+                </ul>
+            </div>
+            <div class="col-md-2 col-6 mb-4">
+                <h5>Applications</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white text-decoration-none">Online Program</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Regular Program</a></li>
+                    <li><a href="#" class="text-white text-decoration-none">Short-term training</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <p>&copy; All rights reserved. Copyright © 2025 American College of Technology.</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
